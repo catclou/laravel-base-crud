@@ -8,7 +8,13 @@
     <title>My comics CRUD</title>
 </head>
 <body>
-    <h1 class="text-success">Prova My comics CRUD</h1>
+    <h1 class="text-success">My comics CRUD</h1>
+
+    @forelse ($comics as $comic)
+        <h1>{{$comic->title}}</h1>
+    @empty
+        <h2>Il database è vuoto</h2>
+    @endforelse
 
     {{-- Per Bootstrap --}}
     <script src=" {{ asset('js/app.js') }} "></script>
