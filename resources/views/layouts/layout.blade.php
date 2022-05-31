@@ -8,7 +8,7 @@
     <title>My comics CRUD</title>
 </head>
 <body>
-    <h1 class="text-primary">Prova My comics CRUD</h1>
+    <h1 class="text-success">Prova My comics CRUD</h1>
 
     {{-- Per Bootstrap --}}
     <script src=" {{ asset('js/app.js') }} "></script>
