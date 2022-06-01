@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    @forelse ($comics as $comic)
+    {{-- @forelse ($comics as $comic) --}}
     <table class="table table-striped">
         <thead>
             <tr>
@@ -15,6 +15,7 @@
                 <th scope="col">Type</th>
             </tr>
         </thead>
+        @forelse ($comics as $comic)
         <tbody>
             <tr>
                 <th scope="row">{{$comic->id}}</th>
@@ -27,10 +28,11 @@
                 <td>{{$comic->type}}</td>
             </tr>
         </tbody>
-    </table>
-    @empty
+        @empty
         <h2>Il database è vuoto</h2>
-    @endforelse
+        @endforelse
+    </table>
+    
 @endsection
 
 
