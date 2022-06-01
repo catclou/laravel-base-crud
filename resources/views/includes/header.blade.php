@@ -13,7 +13,7 @@
                 <a class="nav-link" href="{{route('comics.index')}}">Lista Comics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Altro</a>
+                <a class="nav-link" href="{{route('comics.create')}}">Aggiungi al database</a>
             </li>
             </ul>
         </div>
