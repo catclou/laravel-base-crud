@@ -8,13 +8,13 @@
     <title>My comics CRUD</title>
 </head>
 <body>
-    <h1 class="text-success">My comics CRUD</h1>
+    
+    {{-- header --}}
+    @include('includes.header')
 
-    @forelse ($comics as $comic)
-        <h1>{{$comic->title}}</h1>
-    @empty
-        <h2>Il database è vuoto</h2>
-    @endforelse
+    {{-- content --}}
+    @yield('content')
+
 
     {{-- Per Bootstrap --}}
     <script src=" {{ asset('js/app.js') }} "></script>
