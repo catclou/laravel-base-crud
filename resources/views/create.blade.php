@@ -52,7 +52,7 @@
                     {{-- input prezzo --}}
                     <div class="col-md">
                         <div class="form-floating">
-                            <input type="number" required name="price" class="form-control" id="title" placeholder="" value="">
+                            <input type="number" required name="price" step="0.01" class="form-control" id="title" placeholder="" value="">
                             <label for="title">Prezzo</label>
                         </div>
                     </div>
