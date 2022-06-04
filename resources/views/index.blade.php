@@ -49,7 +49,7 @@
                 <a type="button" href="{{route('comics.edit', $comic->id)}}" class="btn btn-outline-warning rounded rounded-circle m-1"><i class="fa-solid fa-pen-to-square"></i></a>
 
                 {{-- form + button della destroy --}}
-                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                <form action="{{route('comics.destroy', $comic->id)}}" method="POST" data-name="{{$comic->title}}" class="delete-form">
                     @csrf
 
                     {{-- uso il metodo Delete --}}
@@ -71,3 +71,9 @@
     
 @endsection
 
+{{-- Per la conferma di cancellazione del record --}}
+@section('delete-message')
+
+    <script src=" {{ asset('js/deleteMessage.js') }} "></script>
+
+@endsection

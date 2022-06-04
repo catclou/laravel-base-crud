@@ -16,6 +16,8 @@
     {{-- content --}}
     @yield('content')
 
+    {{-- JS delete message --}}
+    @yield('delete-message')
 
     {{-- Per Bootstrap --}}
     <script src=" {{ asset('js/app.js') }} "></script>
