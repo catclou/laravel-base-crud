@@ -2,6 +2,13 @@
 
 @section('content')
 
+    {{-- Alert di conferma eliminazione di un record --}}
+    @if (session('message'))
+        <div class="alert alert-warning">
+            {{session('message')}}
+        </div>
+    @endif
+
     {{-- Intestazione fissa della tabella --}}
     <table class="table">
         <thead class="table-success">
@@ -24,7 +31,6 @@
 
     @forelse ($comics as $comic)
 
-    
         <tr>
             <td> <img src="{{$comic->thumb}}" class="w-100" alt="cover"> </td>
             <th scope="row">{{$comic->id}}</th>
@@ -35,14 +41,19 @@
             <td>{{$comic->sale_date}}</td>
             <td>{{$comic->type}}</td>
             <td>
+
+                {{-- button della show --}}
                 <a type="button" href="{{route('comics.show', $comic->id)}}" class="btn btn-outline-info rounded rounded-circle m-1"><i class="fa-solid fa-eye"></i></a>
+
+                {{-- button della edit --}}
                 <a type="button" href="{{route('comics.edit', $comic->id)}}" class="btn btn-outline-warning rounded rounded-circle m-1"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                {{-- form + button della destroy --}}
                 <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                     @csrf
 
                     {{-- uso il metodo Delete --}}
                     @method('DELETE')
-
 
                     <button type="submit" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></button>
                 </form>
