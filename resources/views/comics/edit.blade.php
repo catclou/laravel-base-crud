@@ -7,7 +7,7 @@
 
         <div class="m-4">
             {{-- Form per inserire i dati nell'entità --}}
-            <form action="{{route('comics.update', ['id' => $comic->id])}}" method="POST" class="w-100 row-cols-2 g-3 d-flex flex-column align-content-center justify-content-center flex-wrap mx-auto">
+            <form action="{{route('comics.update', $comic->id)}}" method="POST" class="w-100 row-cols-2 g-3 d-flex flex-column align-content-center justify-content-center flex-wrap mx-auto">
 
                 @csrf
 

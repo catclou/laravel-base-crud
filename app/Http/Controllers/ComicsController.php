@@ -59,6 +59,9 @@ class ComicsController extends Controller
         $new_comic->fill($data);
         $new_comic->save();
 
+        // redirect alla show in caso di successo nel salvataggio:
+        // mostrerà il record appena creato
+
         return redirect()->route('comics.show', $new_comic);
     }
 
@@ -79,9 +82,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
