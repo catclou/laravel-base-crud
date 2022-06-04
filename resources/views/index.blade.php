@@ -19,9 +19,12 @@
         </thead>
 
     {{-- Ciclo per stampare tutte le informazioni --}}
+    
+    <tbody>
+
     @forelse ($comics as $comic)
 
-    <tbody>
+    
         <tr>
             <td> <img src="{{$comic->thumb}}" class="w-100" alt="cover"> </td>
             <th scope="row">{{$comic->id}}</th>
@@ -37,11 +40,13 @@
                 <a type="button" href="{{route('comics.destroy', $comic->id)}}" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></a>
             </td>
         </tr>
-    </tbody>
 
     @empty
     <h2>Il database è vuoto</h2>
     @endforelse
+
+    </tbody>
+
 
     </table>
     

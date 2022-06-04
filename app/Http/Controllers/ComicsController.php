@@ -37,6 +37,22 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+
+        // validazione
+
+        $request->validate([
+            'title' => 'required|unique:comics',
+            'description' => 'required',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required',
+            'sale_date' => 'required',
+            'type' => 'required',
+        ]);
+
+
+        // salvataggio dei dati
+
         $data = $request->all();
         
         $new_comic = new Comic();
@@ -75,9 +91,12 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        $comic->update($data);
+        
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
