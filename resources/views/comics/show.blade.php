@@ -2,6 +2,13 @@
 
 @section('content')
 
+{{-- Alert di conferma modifica di un record --}}
+@if (session('message'))
+<div class="alert alert-warning">
+    {{session('message')}}
+</div>
+@endif
+
 <div class="container mt-4 text-center d-flex flex-column align-self-center justify-content-center">
 
     <h1 class="text-primary text-center m-3 fs-3 lead fw-bold">{{$comic->title}}</h1>
