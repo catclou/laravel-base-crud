@@ -44,7 +44,7 @@
                     @method('DELETE')
 
 
-                    <a type="submit" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></a>
+                    <button type="submit" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></button>
                 </form>
             </td>
         </tr>
