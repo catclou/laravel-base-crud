@@ -37,7 +37,15 @@
             <td>
                 <a type="button" href="{{route('comics.show', $comic->id)}}" class="btn btn-outline-info rounded rounded-circle m-1"><i class="fa-solid fa-eye"></i></a>
                 <a type="button" href="{{route('comics.edit', $comic->id)}}" class="btn btn-outline-warning rounded rounded-circle m-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a type="button" href="{{route('comics.destroy', $comic->id)}}" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></a>
+                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                    @csrf
+
+                    {{-- uso il metodo Delete --}}
+                    @method('DELETE')
+
+
+                    <a type="submit" class="btn btn-outline-danger rounded rounded-circle m-1"><i class="fa-solid fa-trash-can"></i></a>
+                </form>
             </td>
         </tr>
 

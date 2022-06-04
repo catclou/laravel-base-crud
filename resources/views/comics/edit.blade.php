@@ -5,6 +5,17 @@
     <div class="container-fluid">
         <h3 class="lead fw-bold text-primary fs-3 text-center p-5 mt-5">Modifica un record nel database</h3>
 
+        {{-- Visualizzazione errori validazione --}}
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <div class="m-4">
             {{-- Form per inserire i dati nell'entità --}}
             <form action="{{route('comics.update', $comic->id)}}" method="POST" class="w-100 row-cols-2 g-3 d-flex flex-column align-content-center justify-content-center flex-wrap mx-auto">
