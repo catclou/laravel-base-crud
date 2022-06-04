@@ -27,7 +27,7 @@
                     {{-- input titolo --}}
                     <div class="w-100">
                         <div class="form-floating">
-                            <input type="text" required class="form-control" id="title" placeholder="" value="" name="title">
+                            <input type="text" required class="form-control" id="title" placeholder="" value="{{ old('title') }}" name="title">
                             <label for="title">Titolo</label>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="row g-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <textarea class="form-control" required placeholder="Leave a comment here" name="description" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" required placeholder="Leave a comment here" name="description" value="{{ old('description') }}" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Descrizione</label>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                     {{-- input link cover --}}
                     <div class="col-md">
                         <div class="form-floating">
-                            <input type="text" required class="form-control" name="thumb" id="title" placeholder="" value="">
+                            <input type="text" required class="form-control" name="thumb" id="title" placeholder="" value="{{ old('thumb') }}">
                             <label for="title">Link copertina</label>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     {{-- input prezzo --}}
                     <div class="col-md">
                         <div class="form-floating">
-                            <input type="number" required name="price" step="0.01" class="form-control" id="title" placeholder="" value="">
+                            <input type="number" required name="price" step="0.01" class="form-control" id="title" placeholder="" value="{{ old('price') }}">
                             <label for="title">Prezzo</label>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     {{-- input link cover --}}
                     <div class="col-md">
                         <div class="form-floating">
-                            <input type="text" required class="form-control" name="series" id="title" placeholder="" value="">
+                            <input type="text" required class="form-control" name="series" id="title" placeholder="" value="{{ old('series') }}">
                             <label for="title">Series</label>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         {{-- input data di pubblicazione --}}
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="date" required class="form-control" name="sale_date" id="title" placeholder="" value="">
+                                <input type="date" required class="form-control" name="sale_date" id="title" placeholder="" value="{{ old('sale_date') }}">
                                 <label for="title">Data di pubblicazione</label>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                         {{-- input tipo di pubblicazione --}}
                         <div class="col-md">
                             <div class="form-floating">
-                                <select class="form-select" required id="type" name="type">
+                                <select class="form-select" required id="type" name="type" value="{{ old('type') }}">
                                     <option value="comic book">Comic book</option>
                                     <option value="graphic novel">Graphic novel</option>
                                 </select>
